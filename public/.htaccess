@@ -1,0 +1,11 @@
+# Serves index.html for any path that isn't a real file, so React Router's
+# client-side routes work on refresh and direct links under Hostinger's
+# Apache/LiteSpeed shared hosting.
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.html [L]
+</IfModule>
