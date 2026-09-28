@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Navigate } from "react-router-dom";
 import { api, apiErrorMessage } from "../lib/api";
 import { useAuthStore } from "../store/authStore";
+import logo from "../assets/logo.png";
 
 export default function Login() {
   const token = useAuthStore((s) => s.token);
@@ -31,7 +32,7 @@ export default function Login() {
     <div className="flex min-h-screen items-center justify-center bg-neutral-50 px-4">
       <div className="card w-full max-w-sm p-8">
         <div className="mb-6 text-center">
-          <div className="font-serif text-2xl font-semibold tracking-wide">Rishi Home Interior</div>
+          <img src={logo} alt="Rishi Home Interior" className="mx-auto mb-3 h-20 w-20 rounded-lg" />
           <div className="mt-1 text-xs uppercase tracking-[0.2em] text-neutral-400">Studio Admin</div>
         </div>
         <form onSubmit={onSubmit} className="space-y-4">
